@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
+import userRoute from "./routes/user.route.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ const corsOptions = {
     origin:'http://localhost:5173',
     credentials:true
 }
+app.use("/api/v1/user",userRoute);
 
 app.use(cors(corsOptions));
 app.listen(3000,()=>{
