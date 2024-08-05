@@ -4,7 +4,7 @@ import cors from 'cors'
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import userRoute from "./routes/user.route.js";
-
+import companyRoute from "./routes/company.route.js";
 dotenv.config();
 
 
@@ -26,6 +26,7 @@ const corsOptions = {
     credentials:true
 }
 app.use("/api/v1/user",userRoute);
+app.use("/api/v1/company",companyRoute);
 
 app.use(cors(corsOptions));
 app.listen(3000,()=>{
